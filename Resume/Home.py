@@ -20,7 +20,7 @@ st.write('With our tool, you can: Enhance your resume to increase your chances o
 st.write('Ready to take your resume to the next level? Upload your resume now and get personalized feedback that can help you land your dream job. Your career success starts here.')
 
 # add logo for careercanvas
-st.image('CareerBoost.png', width = 190)
+#st.image('CareerBoost.png', width = 190)
 
 # include diclaimer that ChatGPT may be inaccurate and this app acts as guidance and will not guarrantee job interview or job offer
 

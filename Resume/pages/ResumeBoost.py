@@ -92,8 +92,10 @@ import os
 from PyPDF2 import PdfReader
 import re
 
+st.write("API_KEY:", st.secrets["OPENAI_API_KEY"])
+
 # Ensure the API key is set
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.environ["OPENAI_API_KEY"]
 if not openai.api_key:
     st.error("OpenAI API key is not set. Please set the OPENAI_API_KEY environment variable.")
     st.stop()
@@ -124,7 +126,7 @@ def get_completion(prompt, model="gpt-4-turbo-preview"):
         response = openai.ChatCompletion.create(
             model=model,
             messages=[
-                {"role": "system", "content": "You are a talent career coach providing feedback on a resume. Please provide feedback on the resume as well as give recommendations on different career paths suited for that resume."},
+                {"role": "system", "content": "You are a talent career coach providing feedback on a resume. Please provide feedback on the resume as well as give recommendations on different career paths suited for that resume. You must be able to handle file sizes of up to 500MB and PDF's of multiple"},
                 {"role": "user", "content": prompt},
             ]
         )
@@ -178,3 +180,4 @@ def resume_feedback():
 
 if __name__ == "__main__":
     resume_feedback()
+
