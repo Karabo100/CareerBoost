@@ -6,13 +6,11 @@ import os
 from PyPDF2 import PdfReader
 import re
 
-
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 # Ensure the API key is set
 if "OPENAI_API_KEY" not in st.secrets:
     st.error("OpenAI API key is not set in Streamlit secrets. Please set the OPENAI_API_KEY in secrets.")
     st.stop()
-
-openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # Function to extract text from PDF
 def extract_text_from_pdf(uploaded_file):
