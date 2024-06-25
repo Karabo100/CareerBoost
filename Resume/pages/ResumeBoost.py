@@ -92,7 +92,7 @@ import os
 from PyPDF2 import PdfReader
 import re
 
-st.write("API_KEY:", st.secrets["OPENAI_API_KEY"])
+# st.write("API_KEY:", st.secrets["OPENAI_API_KEY"])
 
 # Ensure the API key is set
 openai.api_key = os.environ["OPENAI_API_KEY"]
